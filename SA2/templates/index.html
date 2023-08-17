@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Data</title>
+    <!-- Add Favicon -->
+    <link rel="icon" href="https://s3-whjr-curriculum-uploads.whjr.online/ee4d9eb1-06b3-4189-81ea-76992cb16590.png"
+        type="image/x-icon">
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ '/static/css/style.css' }}" />
+    <link rel="stylesheet" type="text/css" href="{{ '/static/css/blockStyle.css' }}" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header section -->
+        <div class="header">
+            <!-- Add the logo here -->
+            <img src="../static/assets/ETH.png"
+                alt="Logo" class="logo">
+                <img src="../static/assets/Ethereum Transaction.png"
+                alt="Logo" style="width: auto; height: 26px;">
+        </div>
+        <!-- Rest of your content -->
+        <form action="{{url_for('home', form ='f1')}}" method="post" id="form1">
+            <label for="inputData">Block Number</label>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="number" class="form-control custom-input" id="inputData" placeholder="Block Number"
+                        name="blockNumber" required>
+                    <button type="submit" class="btn btn-primary">Show Data</button>
+                </div>
+            </div>
+        </form>
+        {% if blockData =="NoBlock"%}
+         <h4>No Such Block</h4>
+        {% elif blockData %}
+
+        <h4>Block Number: {{blockData.blockNumber}}</h4>
+        <!-- Table to display data -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <td class="text-center"> <!--block comes here-->
+                        <div class="box-container">
+                            <div class="box rotate">
+                                <div class="box" onmousedown="startDrag(event)" onmousemove="drag(event)"
+                                    onmouseup="endDrag(event)" onclick="toggleInfoSection()">
+                                    <div class="box-front"></div>
+                                    <div class="box-back"></div>
+                                    <div class="box-right"></div>
+                                    <div class="box-left"></div>
+                                    <div class="box-top"></div>
+                                    <div class="box-bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        Total Difficulty: {{blockData.difficulty}}</br>
+                        Block Number: {{blockData.blockNumber}}</br>
+                        Size: {{blockData.size}}</br>
+                        Previous Hash: {{blockData.previousHash}}</br>
+                        Current Hash: {{blockData.currentHash}}</br>
+                        Number Of Transactions: {{blockData.numberOfTransactions}}</br>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+
+        <table>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Transaction hash</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+            </tr>
+            {%for transaction in blockData.transactions%}
+            <tr>
+                <th>{{transaction.srno}}</th>
+                <th>{{transaction.transactionHash}}</th>
+                <th>{{transaction.sender}}</th>
+                <th>{{transaction.receiver}}</th>
+                <th>{{transaction.amount}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

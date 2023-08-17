@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  background-image: url('../assets/New\ BG\ 2.png');
+  background-size: cover;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 800px; /* Increased the maximum width */
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Glossy white and cream color */
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #ff9900;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+form {
+  margin-bottom: 30px;
+  background-color: #fff; /* White form background */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cube {
+  width: 5%;
+  height: 5%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.face {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.front  { background-color: #007bff; transform: translateZ(50px); }
+.back   { background-color: #00a000; transform: translateZ(-50px) rotateY(180deg); }
+.left   { background-color: #ff4500; transform: translateX(-50px) rotateY(-90deg); }
+.right  { background-color: #ffa500; transform: translateX(50px) rotateY(90deg); }
+.top    { background-color: #9400d3; transform: translateY(-50px) rotateX(90deg); }
+.bottom { background-color: #ff1493; transform: translateY(50px) rotateX(-90deg); }
+
+label {
+  font-weight: bold;
+  color: #f7a845;
+  margin-right: 10px; /* Add some space between the label and input */
+}
+
+.input-group {
+  flex: 1; /* Allow the input to take available space */
+}
+
+.custom-input {
+  width: 40%; /* Reduced the width of the input box */
+  margin-right: 20%; /* Added space between input box and button */
+  
+  border: 0.5px solid #f7a845!important;
+  border-radius: 15px!important;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 8px 20px; /* Adjusted the padding to make the button smaller */
+  margin-left: 10%;
+  margin-right: 10%; /* Added space between button and input box */
+}
+
+/* To ensure alignment between button and input box */
+.form-group {
+  align-items: center;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout:fixed;
+    width:100%;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.front  { background-color: #007bff; transform: translateZ(50px); }
+.back   { background-color: #00a000; transform: translateZ(-50px) rotateY(180deg); }
+.left   { background-color: #ff4500; transform: translateX(-50px) rotateY(-90deg); }
+.right  { background-color: #ffa500; transform: translateX(50px) rotateY(90deg); }
+.top    { background-color: #9400d3; transform: translateY(-50px) rotateX(90deg); }
+.bottom { background-color: #ff1493; transform: translateY(50px) rotateX(-90deg); }
+
+button{
+  width: fit-content;
+  background-color: #f7a845!important;
+  padding: 1% 5%;
+  border-radius: 15px!important;
+  text-shadow: 1px 1px 3px black;
+  border: none!important;
+}
